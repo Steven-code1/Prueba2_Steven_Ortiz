@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<br/>
+<br/>
+
+<form action="/addAuthor" method="post" class="container">
+  <div class="mb-3 " hidden>
+    <div class="input-field">
+      <input type="text" id="id" name="id" th:value="${author.id}" />
+      <label for="id" class="active">ID</label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="input-field">
+      <input type="text" id="firstName" name="firstName" th:value="${author.first_name}" required />
+      <label for="firstName" class="active">First Name</label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="input-field">
+      <input type="text" id="lastName" name="lastName" th:value="${author.last_name}" required />
+      <label for="lastName" class="active">Last Name</label>
+    </div>
+  </div>
+
+  <a class="btn blue" href="/">Cancel</a>
+  <button type="submit" class="btn blue lighten-2">Save</button>
+</form>
+
+</body>
+</html>

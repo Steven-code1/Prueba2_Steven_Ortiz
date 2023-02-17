@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<br>
+<div class="center-align">
+  <a class="btn waves-effect waves-light" href="/addAuthor">Añadir Autor</a>
+  <a class="btn waves-effect waves-light" href="/books">Libros</a>
+</div>
+
+
+<table class="striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="a : ${authors}">
+    <td th:text="${a.id}"></td>
+    <td th:text="${a.first_name}"></td>
+    <td th:text="${a.last_name}"></td>
+    <td>
+      <a class="btn-large btn-small waves-effect waves-light blue" th:href="'/updateAuthor/' + ${a.id}">Editar</a>
+    </td>
+    <td>
+      <a class="btn-large btn-small waves-effect waves-light red" th:href="'/deleteAuthor/' + ${a.id}">Eliminar</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

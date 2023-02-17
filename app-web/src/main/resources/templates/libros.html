@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+<br>
+<div class="center-align">
+    <a class="btn btn-outline-secondary" href="/">Regresar</a>
+    <a class="btn btn-outline-success" href="/addBook">Añadir Libro</a>
+</div>
+
+<br>
+<table class="striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Autor</th>
+        <th>ISBN</th>
+        <th>Titulo</th>
+        <th>Precio</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="b:${books}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.author}"></td>
+        <td th:text="${b.isbn}"></td>
+        <td th:text="${b.title}"></td>
+        <td th:text="${b.price}"></td>
+        <td>
+            <a class="btn-large btn-small waves-effect waves-light blue" th:href="'/updateBook/'+${b.id}">Editar</a>
+        </td>
+        <td>
+            <a class="btn-large btn-small waves-effect waves-light red" th:href="'/deleteBook/'+${b.id}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
